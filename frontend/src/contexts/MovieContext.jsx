@@ -14,7 +14,6 @@ export const MovieProvider = ({children}) => {
 
     }, [])
 
-    
     useEffect(() => {
         localStorage.setItem('favorites', JSON.stringify(favorites))
     }, [favorites])
@@ -30,11 +29,40 @@ export const MovieProvider = ({children}) => {
         return favorites.some(movie => movie.id === movieId)
     }
     
+    const [watchLater, setWatchLater] = useState([])
+
+    useEffect(() => {
+        const storedWatchLater = localStorage.getItem("watchLater")
+            if (storedWatchLater) setWatchLater(JSON.parse(storedWatchLater))
+    }, [])
+    
+    useEffect(() => {
+        localStorage.setItem('watchLater', JSON.stringify(watchLater))
+    }, [watchLater])
+    
+    const addToWatchLater = (movie) => {
+        setWatchLater(prev => [...prev,movie])
+    }
+
+    const removeFromFavourites = (movieId) => {
+        setWatchLater(prev => prev.filter(movie => movie.id !== movieId))
+    }
+
+    const isWatchLater = (movieId) => {
+        return watchLater.some(movie => movie.id === movieId)
+    }
+
+
     const value = {
         favorites,
         addToFavorites,
         removeFromFavorites,
-        isFavorite
+        isFavorite,
+        watchLater,
+        addToWatchLater,
+        removeFromFavourites,
+        isWatchLater
+        
     }
 
 
