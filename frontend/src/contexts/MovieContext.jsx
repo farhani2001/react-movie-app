@@ -14,6 +14,7 @@ export const MovieProvider = ({children}) => {
 
     }, [])
 
+    
     useEffect(() => {
         localStorage.setItem('favorites', JSON.stringify(favorites))
     }, [favorites])
@@ -41,3 +42,5 @@ export const MovieProvider = ({children}) => {
         {children}
     </MovieContext.Provider>
 }
+
+
