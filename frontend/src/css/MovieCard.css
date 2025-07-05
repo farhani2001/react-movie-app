@@ -59,11 +59,30 @@
   border-radius: 50%;
   width: 40px;
   height: 40px;
+  
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background-color 0.2s;
 }
+
+
+/* Position the watch-later button at the bottom */
+.watch-later-button {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
 
 .favorite-btn:hover {
   background-color: rgba(0, 0, 0, 0.8);

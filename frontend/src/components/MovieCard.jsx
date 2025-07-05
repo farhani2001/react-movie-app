@@ -1,5 +1,6 @@
 import "../css/MovieCard.css";
 import {useMovieContext} from "../contexts/MovieContext";
+import clock from "../assets/clock.png";
 
 function MovieCard({movie}){
     const {isFavorite, addToFavorites, removeFromFavorites} = useMovieContext()
@@ -19,10 +20,14 @@ function MovieCard({movie}){
             <div className="movie-poster">
                 <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                 <div className="movie-overlay">
-                    <button className={`favourite-button ${favorite ? "active" : ""}`}onClick={onFavouriteClick}>
-                    ♥
+                    <button className={`favorite-button ${favorite ? "active" : ""}`} onClick={onFavouriteClick}>
+                        ♥
                     </button>
+                <button className="watch-later-button">
+                    <img src={clock} alt="watch-later" className="watch-later-icon"/>
+                </button>
                 </div>
+                
             </div>
             <div className="movie-info">
                 <h3>{movie.title}</h3>
