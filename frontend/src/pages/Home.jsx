@@ -48,6 +48,17 @@ function Home() {
     }
     return(
         <div className="home">
+            <div className="signup">
+            <h1>
+                Welcome to Farhani's Movie app
+            </h1>
+            <button>
+                <a href = "/signup" className="signup-link">Sign Up</a>
+            </button>
+            <button>
+                <a href = "/login" className = "login-link">Login</a>
+            </button>
+            </div>
             <form onSubmit = {handleSearch} className="search-form">
                 <input type="text" placeholder="Search for movies" className="search-input" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
                 <button type="submit" className="search-button">Search</button>

@@ -51,7 +51,7 @@
 .favorite-btn {
   position: absolute;
   top: 1rem;
-  right: 1rem;
+  right: 4rem;
   color: white;
   font-size: 1.5rem;
   padding: 0.5rem;
@@ -75,8 +75,8 @@
   font-size: 1.5rem;
   padding: 0.5rem;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,6 +89,10 @@
 }
 
 .favorite-btn.active {
+  color: #ff4757;
+}
+
+.watch-later-button.active {
   color: #ff4757;
 }
 

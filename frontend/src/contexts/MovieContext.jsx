@@ -44,7 +44,7 @@ export const MovieProvider = ({children}) => {
         setWatchLater(prev => [...prev,movie])
     }
 
-    const removeFromFavourites = (movieId) => {
+    const removeFromWatchLater = (movieId) => {
         setWatchLater(prev => prev.filter(movie => movie.id !== movieId))
     }
 
@@ -60,7 +60,7 @@ export const MovieProvider = ({children}) => {
         isFavorite,
         watchLater,
         addToWatchLater,
-        removeFromFavourites,
+        removeFromWatchLater,
         isWatchLater
         
     }
