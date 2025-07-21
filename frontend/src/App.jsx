@@ -6,9 +6,17 @@ import {Routes, Route} from "react-router-dom";
 import NavBar from './components/NavBar';
 import {MovieProvider} from "./contexts/MovieContext";
 import React, {useState, useEffect} from "react";
+import axios from "axios";
 
 function App() {
+  const fetchAPI = async () => {
+    const response = await axios.get("http://localhost:8080/api");
+    console.log(response.data.fruits)
+  }
 
+  useEffect(() => {
+    fetchAPI();
+  }, []);
 
   return (
     <MovieProvider>
