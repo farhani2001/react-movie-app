@@ -3,6 +3,8 @@ import{useState, useEffect} from "react"
 import {searchMovies, getPopularMovies} from "../services/api";
 import NavBar from "../components/NavBar";
 import '../css/Home.css';
+import SignUp from "./Signup";
+
 
 function Home() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -54,10 +56,10 @@ function Home() {
                 Welcome to Farhani's Movie app
             </h1>
             <button>
-                <a href = "/signup" className="signup-link">Sign Up</a>
+                <a href="/Signup" className = "signup-link">Signup</a>
             </button>
             <button>
-                <a href = "/login" className = "login-link">Login</a>
+                <a href = "/Login" className = "login-link">Login</a>
             </button>
             </div>
             <form onSubmit = {handleSearch} className="search-form">
